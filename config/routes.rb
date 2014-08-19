@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :members
-  resources :dashboard
-
+  #resources :dashboard
+  resources :posts
   #get 'users/new'
 
   root to: "home#index"

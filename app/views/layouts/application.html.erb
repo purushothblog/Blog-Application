@@ -39,7 +39,7 @@
   <body>
 
 
-    <div class="navbar navbar-default navbar-static-top">
+    <div class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
@@ -64,11 +64,11 @@
           <p class="navbar-text pull-right">
           <% if member_signed_in? %>
             Logged in as <strong><%= current_member.email %></strong>.
-            <%= link_to 'Edit profile', edit_member_registration_path, :class => 'btn btn-default' %> |
-            <%= link_to "Logout", destroy_member_session_path, method: :delete, :class => 'btn btn-default' %>
+            <%= link_to 'Edit profile', edit_member_registration_path, :class => 'btn btn-info' %> |
+            <%= link_to "Logout", destroy_member_session_path, method: :delete, :class => 'btn btn-danger' %>
           <% else %>
-            <%= link_to "Sign up", new_member_registration_path, :class => 'btn btn-default' %> |
-            <%= link_to "Login", new_member_session_path, :class =>'btn btn-default'  %>
+            <%= link_to "Sign up", new_member_registration_path, :class => 'btn btn-info' %> |
+            <%= link_to "Login", new_member_session_path, :class =>'btn btn-success'  %>
           <% end %>
 
           <%= yield %>

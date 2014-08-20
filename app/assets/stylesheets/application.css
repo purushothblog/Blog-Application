@@ -16,5 +16,6 @@
  @import "bootstrap";
  @import "font-awesome";
  body { padding-top: 60px;}
+	.footer { padding-top: 100px;}
  @import "bootstrap-responsive";
  

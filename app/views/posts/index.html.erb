@@ -20,6 +20,8 @@
         <td><%= post.body %></td>
         <td><%=l post.created_at %></td>
         <td>
+        <%= link_to t('.show', :default => t("helpers.links.show")),
+                      post_path(post), :class => 'btn btn-success btn-xs' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_post_path(post), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

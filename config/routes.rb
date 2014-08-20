@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   devise_for :members
   #resources :dashboard
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
+
   #get 'users/new'
 
   root to: "home#index"
+  #match to: (:controller/:action/:id/)
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

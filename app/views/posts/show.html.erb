@@ -4,10 +4,11 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @post.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:body) %>:</strong></dt>
-  <dd><%= @post.body %></dd>
+  <dt><h4><strong><%= model_class.human_attribute_name(:title) %>:</strong></h4></dt>
+  <dd><h4><%= @post.title %></h4></dd>
+  <dt><h4><strong><%= model_class.human_attribute_name(:body) %>:</strong></h4></dt>
+  <dd><h4><%= @post.body %></h4></dd>
+   <center><p>The above article is posted by <strong><%= @post.member.email %></strong> </p></center>
 </dl>
 <h2>Comments</h2>
 <div id="comments">
@@ -15,7 +16,7 @@
     <%= div_for comment do %>
     <p>
     
-    <strong>Posted <%= time_ago_in_words(comment.created_at) %></strong><br />
+    <strong><%= comment.member.email %> commented <%= time_ago_in_words(comment.created_at) %> ago</strong><br />
     <%= h(comment.body) %>
    
 
@@ -28,11 +29,11 @@
     <p><%= f.label :body, "Enter your comments" %><br/>
         <%= f.text_area :body %>
         </p>
-        <p><%= f.submit "Add Comment", class: "btn btn-default" %></p>
+        <p><%= f.submit "Add Comment", class: "btn btn-success" %></p>
         <% end %>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              posts_path, :class => 'btn btn-default'  %>
+              posts_path, :class => 'btn btn-info'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_post_path(@post), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

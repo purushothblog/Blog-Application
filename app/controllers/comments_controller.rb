@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
     puts params
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-
+    @comment.member = current_member
 
     respond_to do |format|
       if @comment.save

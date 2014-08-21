@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    @post.member = current_member
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -60,6 +60,9 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+ 
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

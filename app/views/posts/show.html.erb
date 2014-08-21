@@ -14,8 +14,11 @@
 <% @post.comments.each do |comment| %>
     <%= div_for comment do %>
     <p>
+    
     <strong>Posted <%= time_ago_in_words(comment.created_at) %></strong><br />
     <%= h(comment.body) %>
+   
+
     </p>
     <% end %>
     <% end %>
@@ -25,7 +28,7 @@
     <p><%= f.label :body, "Enter your comments" %><br/>
         <%= f.text_area :body %>
         </p>
-        <p><%= f.submit "Add Comment" %></p>
+        <p><%= f.submit "Add Comment", class: "btn btn-default" %></p>
         <% end %>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
